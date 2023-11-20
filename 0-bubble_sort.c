@@ -5,35 +5,42 @@
  * @a: The first integer to swap.
  * @b: The second integer to swap.
  */
+void swap_ints(int *a, int *b)
+{
+	int tmp;
 
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
-void bubble_sort(int *array, size_t size) {
-    if (array == NULL || size < 2) {
-        return; // No need to sort an array with 0 or 1 element
-    }
+/**
+ * bubble_sort - Sort an array of integers in ascending order.
+ * @array: An array of integers to sort.
+ * @size: The size of the array.
+ *
+ * Description: Prints the array after each swap.
+ */
+void bubble_sort(int *array, size_t size)
+{
+	size_t i, len = size;
+	bool bubbly = false;
 
-    int swapped;
+	if (array == NULL || size < value_2)
+		return;
 
-    for (size_t i = 0; i < size - 1; i++) {
-        swapped = 0;
-
-        for (size_t j = 0; j < size - 1 - i; j++) {
-            if (array[j] > array[j + 1]) {
-                swap(&array[j], &array[j + 1]);
-                swapped = 1;
-
-                // Print the array after each swap
-                for (size_t k = 0; k < size; k++) {
-                    printf("%d", array[k]);
-                    if (k < size - 1) {
-                        printf(", ");
-                    }
-                }
-                printf("\n");
-            }
-        }
+	while (bubbly == false)
+	{
+		bubbly = true;
+		for (i = value_0; i < len - value_1; i++)
+		{
+			if (array[i] > array[i + value_1])
+			{
+				swap_ints(array + i, array + i + value_1);
+				print_array(array, size);
+				bubbly = false;
+			}
+		}
+		len--;
+	}
+}
