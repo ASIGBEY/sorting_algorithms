@@ -5,22 +5,34 @@
 #include <stdlib.h>
 
 /**
- * enum MyEnum - Represents a custom enumeration.
+ * enum linklist- Represents a custom enumeration.
  * @value_0: Represents the value 0.
  * @value_1: Represents the value 1.
  * @value_2: Represents the value 2.
  * @value_3: Represents the value 3.
  */
-typedef enum {
+typedef enum linklist
+{
     value_0 = 0,
     value_1 = 1,
     value_2 = 2,
     value_3 = 3
-} MyEnum;
+} linklist;
 
 /* Comparison direction macros for bitonic sort */
 #define UP 0
 #define DOWN 1
+
+/**
+ * enum bool - Enumeration of Boolean values.
+ * @false: Equals 0.
+ * @true: Equals 1.
+ */
+typedef enum bool
+{
+	false = 0,
+	true = 1
+} bool;
 
 /**
  * struct listint_s - Doubly linked list node
