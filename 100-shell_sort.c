@@ -24,7 +24,7 @@ void integer_swp(int *a, int *b)
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t space, i, j;
+	size_t space, c, d;
 
 	if (array == NULL || size < value_2)
 		return;
@@ -34,13 +34,13 @@ void shell_sort(int *array, size_t size)
 
 	for (; space >= value_1; space /= value_3)
 	{
-		for (i = space; i < size; i++)
+		for (c = space; c < size; c++)
 		{
-			j = i;
-			while (j >= space && array[j - space] > array[j])
+			d = c;
+			while (d >= space && array[d - space] > array[d])
 			{
-				integer_swp(array + j, array + (j - space));
-				j -= space;
+				integer_swp(array + d, array + (d - space));
+				d -= space;
 			}
 		}
 		print_array(array, size);
